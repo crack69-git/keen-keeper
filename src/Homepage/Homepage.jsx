@@ -8,7 +8,7 @@ import FriendCard from './FriendCard';
 const Homepage = () => {
     return (
         <div className='bg-gray-100'>
-            <div className='border-2 w-4/5 mx-auto'>
+            <div className='w-4/5 mx-auto'>
                 <BannerSection />
                 <CountSection />
                 <FriendCard />
