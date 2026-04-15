@@ -1,84 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MyMainContext } from '../MyContext/MyContext';
+import Card from './Card';
 
 const CardSection = () => {
+    const { cardData } = useContext(MyMainContext);
+    console.log(cardData);
     return (
         <div className='grid grid-cols-4 gap-5 pb-20'>
-            <div className="card bg-base-100 w-full shadow-sm">
-                <figure className="px-10 pt-10">
-
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes"
-                        className="rounded-full w-30 h-30" />
-
-                </figure>
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title">David Kim</h2>
-                    <p>62d ago</p>
-                    <div className="card-actions flex-col">
-                        <div className="badge badge-soft badge-accent">Accent</div>
-                        <div className="badge badge-soft badge-accent">Accent</div>
-
-                    </div>
-                </div>
-            </div>
-            <div className="card bg-base-100 w-full shadow-sm">
-                <figure className="px-10 pt-10">
-
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes"
-                        className="rounded-full w-30 h-30" />
-
-                </figure>
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title">David Kim</h2>
-                    <p>62d ago</p>
-                    <div className="card-actions flex-col">
-                        <div className="badge badge-soft badge-accent">Accent</div>
-                        <div className="badge badge-soft badge-accent">Accent</div>
-
-                    </div>
-                </div>
-            </div>
-            <div className="card bg-base-100 w-full shadow-sm">
-                <figure className="px-10 pt-10">
-
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes"
-                        className="rounded-full w-30 h-30" />
-
-                </figure>
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title">David Kim</h2>
-                    <p>62d ago</p>
-                    <div className="card-actions flex-col">
-                        <div className="badge badge-soft badge-accent">Accent</div>
-                        <div className="badge badge-soft badge-accent">Accent</div>
-
-                    </div>
-                </div>
-            </div>
-            <div className="card bg-base-100 w-full shadow-sm">
-                <figure className="px-10 pt-10">
-
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                        alt="Shoes"
-                        className="rounded-full w-30 h-30" />
-
-                </figure>
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title">David Kim</h2>
-                    <p>62d ago</p>
-                    <div className="card-actions flex-col">
-                        <div className="badge badge-soft badge-accent">Accent</div>
-                        <div className="badge badge-soft badge-accent">Accent</div>
-
-                    </div>
-                </div>
-            </div>
+            {
+                cardData.map((card, index) => <Card key={index} card={card} />)
+            }
         </div>
     );
 };
