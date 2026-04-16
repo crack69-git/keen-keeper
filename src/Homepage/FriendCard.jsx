@@ -1,16 +1,18 @@
-import React from 'react';
-import CardSection from './CardSection';
-// import img from '../assets/hero.png';
-const FriendCard = () => {
-    return (
-        <div className='mt-10 '>
-            <p className='text-2xl font-semibold mb-5'>Your Friends</p>
-            <div className=''>
-                <CardSection />
-            </div>
+import React, { Suspense, lazy } from 'react';
 
-        </div>
-    );
+const CardSection = lazy(() => import('./CardSection'));
+
+const FriendCard = () => {
+  return (
+    <div className="mt-10 ">
+      <p className="text-2xl font-semibold mb-5">Your Friends</p>
+      <Suspense
+        fallback={<span className="loading loading-spinner loading-xl"></span>}
+      >
+        <CardSection />
+      </Suspense>
+    </div>
+  );
 };
 
 export default FriendCard;

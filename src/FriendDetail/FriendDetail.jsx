@@ -79,7 +79,7 @@ const FriendDetail = () => {
   return (
     <div className="bg-base-200 pt-20">
       <div className="w-4/5 mx-auto">
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid max-[814px]:grid-cols-1 grid-cols-3 gap-6">
           <div className="flex flex-col gap-3 pb-20">
             <div className="card gap-4 bg-base-100 w-full shadow-sm">
               <figure className="px-10 pt-10">
@@ -128,8 +128,8 @@ const FriendDetail = () => {
             </div>
           </div>
           {/* right section */}
-          <div className="flex flex-col gap-6 col-span-2 ">
-            <div className="grid grid-cols-3 gap-6">
+          <div className="flex flex-col gap-6 sm:col-span-2 ">
+            <div className="grid sm:grid-cols-3 gap-6">
               <div className="card w-full bg-base-100 card-xs text-center shadow-sm py-8">
                 <p className="text-[#244D3F] text-2xl font-bold">62</p>
                 <p className="text-[#64748B] text-[18px] mt-2">
