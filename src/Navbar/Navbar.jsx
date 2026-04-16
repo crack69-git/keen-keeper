@@ -17,7 +17,7 @@ const Navbar = () => {
           }
           to={'/'}
         >
-          <House></House>Home
+          Home
         </NavLink>
       </li>
       <li>
