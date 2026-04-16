@@ -14,6 +14,7 @@ import { MyMainContext } from '../MyContext/MyContext';
 import messageIcon from '../assets/text.png';
 import videoIcon from '../assets/video.png';
 import callIcon from '../assets/call.png';
+import { Bounce, toast } from 'react-toastify';
 const FriendDetail = () => {
   const data = useLoaderData();
   // console.log(data);
@@ -24,18 +25,51 @@ const FriendDetail = () => {
   const { Com, setCom } = useContext(MyMainContext);
   console.log('Context Com:', Com);
   const handleCall = (detail) => {
+    toast.success(`Called ${detail.name}`, {
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
+    });
     setCom([
       ...Com,
       { ...detail, status: 'Call', time: new Date().toLocaleString() },
     ]);
   };
   const handleMessage = (detail) => {
+    toast.success(`Message sent to ${detail.name}`, {
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
+    });
     setCom([
       ...Com,
       { ...detail, status: 'Message', time: new Date().toLocaleString() },
     ]);
   };
   const handleVideo = (detail) => {
+    toast.success(`Video call to ${detail.name}`, {
+      position: 'top-center',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+      transition: Bounce,
+    });
     setCom([
       ...Com,
       { ...detail, status: 'Video', time: new Date().toLocaleString() },
