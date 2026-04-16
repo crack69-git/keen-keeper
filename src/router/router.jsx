@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import Homepage from "../Homepage/Homepage";
 import MainLayout from "../LayoutMain/MainLayout";
 import FriendDetail from "../FriendDetail/FriendDetail";
-import TimeLine from "../Timeline/Timeline";
+import Timeline from "../Timeline/Timeline.jsx";
 import StatSection from "../StatSection/StatSection";
 
 const router = createBrowserRouter([
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/timeline",
-                element: <TimeLine></TimeLine>
+                element: <Timeline></Timeline>
             },
             {
                 path: "/stats",

@@ -3,11 +3,10 @@ export const MyMainContext = createContext();
 const cardfetch = fetch('/myData.json').then(res => res.json());
 const MyContext = ({ children }) => {
     const cardData = use(cardfetch);
-    const [state, setState] = useState(true);
+    const [Com, setCom] = useState([]);
     const data = {
-
-        state,
-        setState,
+        Com,
+        setCom,
         cardData,
     }
     return <MyMainContext.Provider value={data}>
