@@ -29,7 +29,7 @@ const FriendDetail = () => {
   const monthName = date.toLocaleString('default', { month: 'long' });
 
   const handleCall = (detail) => {
-    toast.success(`Called ${detail.name}`, {
+    toast.success(`Call with ${detail.name}`, {
       position: 'top-center',
       autoClose: 1000,
       hideProgressBar: false,
@@ -51,7 +51,7 @@ const FriendDetail = () => {
     ]);
   };
   const handleMessage = (detail) => {
-    toast.success(`Message sent to ${detail.name}`, {
+    toast.success(`Message with ${detail.name}`, {
       position: 'top-center',
       autoClose: 1000,
       hideProgressBar: false,
@@ -73,7 +73,7 @@ const FriendDetail = () => {
     ]);
   };
   const handleVideo = (detail) => {
-    toast.success(`Video call to ${detail.name}`, {
+    toast.success(`Video call with ${detail.name}`, {
       position: 'top-center',
       autoClose: 1000,
       hideProgressBar: false,
