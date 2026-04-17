@@ -150,18 +150,22 @@ const FriendDetail = () => {
           <div className="flex flex-col gap-6 sm:col-span-2 ">
             <div className="grid sm:grid-cols-3 gap-6">
               <div className="card w-full bg-base-100 card-xs text-center shadow-sm py-8">
-                <p className="text-[#244D3F] text-2xl font-bold">62</p>
+                <p className="text-[#244D3F] text-2xl font-bold">
+                  {detail.days_since_contact}
+                </p>
                 <p className="text-[#64748B] text-[18px] mt-2">
                   Days Since Contact
                 </p>
               </div>
               <div className="card w-full bg-base-100 card-xs text-center shadow-sm py-8">
-                <p className="text-[#244D3F] text-2xl font-bold">30</p>
+                <p className="text-[#244D3F] text-2xl font-bold">
+                  {detail.goal}
+                </p>
                 <p className="text-[#64748B] text-[18px] mt-2">Goal(Days)</p>
               </div>
               <div className="card w-full bg-base-100 card-xs text-center shadow-sm py-8">
                 <p className="text-[#244D3F] text-2xl font-bold px-3">
-                  February 15, 2023
+                  {detail.next_due_date}
                 </p>
                 <p className="text-[#64748B] text-[18px] mt-2">Next Due</p>
               </div>
