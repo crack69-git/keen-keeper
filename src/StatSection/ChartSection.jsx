@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Pie, PieChart } from 'recharts';
-import { MyMainContext } from '../MyContext/MyContext';
+import { MyMainContext } from '../MyContext/MainContext';
 
 const ChartSection = () => {
   const { Com } = useContext(MyMainContext);

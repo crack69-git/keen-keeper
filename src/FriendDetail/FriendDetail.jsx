@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
-import { MyMainContext } from '../MyContext/MyContext';
+import { MyMainContext } from '../MyContext/MainContext';
 import messageIcon from '../assets/text.png';
 import videoIcon from '../assets/video.png';
 import callIcon from '../assets/call.png';
@@ -24,6 +24,10 @@ const FriendDetail = () => {
   // console.log("Detail:", detail);
   const { Com, setCom } = useContext(MyMainContext);
   console.log('Context Com:', Com);
+
+  const date = new Date();
+  const monthName = date.toLocaleString('default', { month: 'long' });
+
   const handleCall = (detail) => {
     toast.success(`Called ${detail.name}`, {
       position: 'top-center',
@@ -36,9 +40,14 @@ const FriendDetail = () => {
       theme: 'dark',
       transition: Bounce,
     });
-    setCom([
-      ...Com,
-      { ...detail, status: 'Call', time: new Date().toLocaleString() },
+    setCom((prev) => [
+      ...prev,
+      {
+        ...detail,
+        status: 'Call',
+        time: new Date().toLocaleString(),
+        month: monthName,
+      },
     ]);
   };
   const handleMessage = (detail) => {
@@ -53,9 +62,14 @@ const FriendDetail = () => {
       theme: 'dark',
       transition: Bounce,
     });
-    setCom([
-      ...Com,
-      { ...detail, status: 'Message', time: new Date().toLocaleString() },
+    setCom((prev) => [
+      ...prev,
+      {
+        ...detail,
+        status: 'Message',
+        time: new Date().toLocaleString(),
+        month: monthName,
+      },
     ]);
   };
   const handleVideo = (detail) => {
@@ -70,9 +84,14 @@ const FriendDetail = () => {
       theme: 'dark',
       transition: Bounce,
     });
-    setCom([
-      ...Com,
-      { ...detail, status: 'Video', time: new Date().toLocaleString() },
+    setCom((prev) => [
+      ...prev,
+      {
+        ...detail,
+        status: 'Video',
+        time: new Date().toLocaleString(),
+        month: monthName,
+      },
     ]);
   };
 

@@ -1,7 +1,7 @@
 import { ChartLine, Clock9, House } from 'lucide-react';
 // import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
-import { MyMainContext } from '../MyContext/MyContext';
+import { MyMainContext } from '../MyContext/MainContext';
 
 const Navbar = () => {
   // const { state, setState } = useContext(MyMainContext);

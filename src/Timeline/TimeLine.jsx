@@ -1,30 +1,49 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import messageIcon from '../assets/text.png';
 import videoIcon from '../assets/video.png';
 import callIcon from '../assets/call.png';
-import { MyMainContext } from '../MyContext/MyContext';
+import { MyMainContext } from '../MyContext/MainContext';
 import NothingSection from '../NothingSection/NothingSection';
 const Timeline = () => {
-  const { Com } = useContext(MyMainContext);
+  const { Com, current, setCurrent } = useContext(MyMainContext);
+
+  useEffect(() => {
+    setCurrent(Com);
+  }, [Com, setCurrent]);
+
   const selector = (
     <>
-      <option disabled>Filter timeline</option>
-      <option>Date</option>
+      <option value="">All Timeline</option>
+      <option value="Message">Text</option>
+      <option value="Video">Video</option>
+      <option value="Call">Call</option>
     </>
   );
+  const handleFilter = (value) => {
+    if (value === '') {
+      setCurrent(Com);
+      return;
+    }
+
+    const filtered = Com.filter((item) => item.status === value);
+    setCurrent(filtered);
+  };
   return (
     <div className="bg-base-200 h-full">
       <div className="w-4/5 mx-auto pt-20">
         <p className="text-5xl mb-3">Timeline</p>
-        <select defaultValue="Pick a color" className="select mb-6">
+        <select
+          className="select mb-6"
+          onChange={(e) => handleFilter(e.target.value)}
+        >
           {selector}
         </select>
-        {Com.length == 0 ? (
+        {current.length === 0 ? (
           <NothingSection />
         ) : (
           <div className="grid grid-cols-1 gap-2 mb-10">
             {/* card section */}
-            {Com.map((com, index) => (
+            {current.map((com, index) => (
               <div
                 key={index}
                 className="card flex-row items-center pl-4 w-full bg-base-100 card-sm shadow-sm"
